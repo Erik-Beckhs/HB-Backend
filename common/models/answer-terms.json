@@ -14,12 +14,12 @@
       "type": "string",
       "required": true
     },
+    "commentSupplier": {
+      "type": "string"
+    },
     "checkSupplier": {
       "type": "boolean",
       "default": false
-    },
-    "commentSupplier": {
-      "type": "string"
     },
     "idAnswer": {
       "type": "number"
