@@ -1,0 +1,56 @@
+{
+  "name": "Query",
+  "plural": "querys",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "orderQuery": {
+      "type": "number",
+      "required": true
+    },
+    "type": {
+      "type": "number",
+      "required": true
+    },
+    "required": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "idSection": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "options": {
+      "type": "hasMany",
+      "model": "Options",
+      "foreignKey": "idQuery"
+    },
+    "section": {
+      "type": "belongsTo",
+      "model": "Section",
+      "foreignKey": "idSection"
+    },
+    "answerSurveys": {
+      "type": "hasMany",
+      "model": "answerSurvey",
+      "foreignKey": "idQuery"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

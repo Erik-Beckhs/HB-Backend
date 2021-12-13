@@ -1,0 +1,38 @@
+{
+  "name": "answerSurvey",
+  "plural": "answerSurveys",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "idAnswer": {
+      "type": "number"
+    },
+    "answer1": {
+      "type": "string"
+    },
+    "idQuery": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "answer": {
+      "type": "belongsTo",
+      "model": "Answer",
+      "foreignKey": "idAnswer"
+    },
+    "query": {
+      "type": "belongsTo",
+      "model": "Query",
+      "foreignKey": "idQuery"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,75 @@
+{
+  "name": "answerProdServ",
+  "plural": "answerProdServs",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "id": true
+    },
+    "idAnswer": {
+      "type": "number"
+    },
+    "idProdServ": {
+      "type": "string"
+    },
+    "timeService": {
+      "type": "number"
+    },
+    "unitPrice": {
+      "type": "number"
+    },
+    "total": {
+      "type": "number"
+    },
+    "offerName": {
+      "type": "string"
+    },
+    "about": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    },
+    "nameDoc": {
+      "type": "string"
+    },
+    "doc": {
+      "type": "string"
+    },
+    "img": {
+      "type": "string"
+    },
+    "discount": {
+      "type": "number"
+    },
+    "typeDiscount": {
+      "type": "string"
+    },
+    "priceDiscount": {
+      "type": "number"
+    },
+    "advantage": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "answer": {
+      "type": "belongsTo",
+      "model": "Answer",
+      "foreignKey": "idAnswer"
+    },
+    "productService": {
+      "type": "belongsTo",
+      "model": "productService",
+      "foreignKey": "idProdServ"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

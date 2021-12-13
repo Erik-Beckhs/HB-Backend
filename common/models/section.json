@@ -1,0 +1,41 @@
+{
+  "name": "Section",
+  "plural": "sections",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "idSurvey": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "survey": {
+      "type": "belongsTo",
+      "model": "Survey",
+      "foreignKey": "idSurvey"
+    },
+    "queries": {
+      "type": "hasMany",
+      "model": "Query",
+      "foreignKey": "idSection"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

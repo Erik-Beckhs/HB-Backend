@@ -1,0 +1,43 @@
+{
+  "name": "answerTerms",
+  "plural": "answerTermss",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "idTerm": {
+      "type": "string",
+      "required": true
+    },
+    "checkSupplier": {
+      "type": "boolean",
+      "default": false
+    },
+    "commentSupplier": {
+      "type": "string"
+    },
+    "idAnswer": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "termsConditions": {
+      "type": "belongsTo",
+      "model": "termsConditions",
+      "foreignKey": "idTerm"
+    },
+    "answer": {
+      "type": "belongsTo",
+      "model": "Answer",
+      "foreignKey": "idAnswer"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

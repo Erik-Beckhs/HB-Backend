@@ -1,0 +1,49 @@
+{
+  "name": "docsRequired",
+  "plural": "docsRequireds",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "instruction": {
+      "type": "string"
+    },
+    "required": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "template": {
+      "type": "string"
+    },
+    "idQuotation": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "quotation": {
+      "type": "belongsTo",
+      "model": "Quotation",
+      "foreignKey": "idQuotation"
+    },
+    "answerDocs": {
+      "type": "hasMany",
+      "model": "answerDocs",
+      "foreignKey": "idDoc"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

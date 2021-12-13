@@ -1,0 +1,56 @@
+{
+  "name": "Contact",
+  "plural": "contacts",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "first_name": {
+      "type": "string",
+      "required": true
+    },
+    "last_name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "img": {
+      "type": "string"
+    },
+    "idUser": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "suppliers": {
+      "type": "hasOne",
+      "model": "Supplier",
+      "foreignKey": "idContact"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

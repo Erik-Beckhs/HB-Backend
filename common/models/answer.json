@@ -1,0 +1,67 @@
+{
+  "name": "Answer",
+  "plural": "answers",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "idQuotation": {
+      "type": "string"
+    },
+    "idSupplier": {
+      "type": "string"
+    },
+    "validity": {
+      "type": "number"
+    },
+    "benefit": {
+      "type": "string"
+    },
+    "responseDate": {
+      "type": "date"
+    },
+    "state": {
+      "type": "number",
+      "default": 1
+    },
+    "commentSupplier": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "answerSurveys": {
+      "type": "hasMany",
+      "model": "answerSurvey",
+      "foreignKey": "idAnswer"
+    },
+    "answerProdServs": {
+      "type": "hasMany",
+      "model": "answerProdServ",
+      "foreignKey": "idAnswer"
+    },
+    "answerTerms": {
+      "type": "hasMany",
+      "model": "answerTerms",
+      "foreignKey": "idAnswer"
+    },
+    "answerDocs": {
+      "type": "hasMany",
+      "model": "answerDocs",
+      "foreignKey": "idAnswer"
+    },
+    "bidAnswers": {
+      "type": "hasMany",
+      "model": "bidAnswer",
+      "foreignKey": "idAnswer"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

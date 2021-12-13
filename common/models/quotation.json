@@ -1,0 +1,91 @@
+{
+  "name": "Quotation",
+  "plural": "quotations",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "money": {
+      "type": "string",
+      "required": true
+    },
+    "typeReq": {
+      "type": "number"
+    },
+    "type": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "adjudicationType": {
+      "type": "string"
+    },
+    "payCondition": {
+      "type": "string"
+    },
+    "start": {
+      "type": "date",
+      "required": true
+    },
+    "end": {
+      "type": "date",
+      "required": true
+    },
+    "noteTerms": {
+      "type": "string"
+    },
+    "idApplicant": {
+      "type": "string"
+    },
+    "idSurvey": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "applicant": {
+      "type": "belongsTo",
+      "model": "Applicant",
+      "foreignKey": "idApplicant"
+    },
+    "termsConditions": {
+      "type": "hasMany",
+      "model": "termsConditions",
+      "foreignKey": "idQuotation"
+    },
+    "docsRequireds": {
+      "type": "hasMany",
+      "model": "docsRequired",
+      "foreignKey": "idQuotation"
+    },
+    "survey": {
+      "type": "belongsTo",
+      "model": "Survey",
+      "foreignKey": "idSurvey"
+    },
+    "answers": {
+      "type": "hasMany",
+      "model": "Answer",
+      "foreignKey": "idQuotation"
+    },
+    "productServices": {
+      "type": "hasMany",
+      "model": "productService",
+      "foreignKey": "idQuotation"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

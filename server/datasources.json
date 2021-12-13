@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "MySQL": {
+    "host": "docker-qas.hansa.com.bo",
+    "port": 900,
+    "url": "",
+    "database": "Proveedor",
+    "password": "sample",
+    "name": "MySQL",
+    "user": "root",
+    "connector": "mysql"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "bidAnswer",
+  "plural": "bidAnswers",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "idAnswer": {
+      "type": "number",
+      "required": true
+    },
+    "total": {
+      "type": "number",
+      "required": true
+    },
+    "datetime": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "answer": {
+      "type": "belongsTo",
+      "model": "Answer",
+      "foreignKey": "idAnswer"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,41 @@
+{
+  "name": "Survey",
+  "plural": "surveys",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "state": {
+      "type": "number"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "sections": {
+      "type": "hasMany",
+      "model": "Section",
+      "foreignKey": "idSurvey"
+    },
+    "quotations": {
+      "type": "hasMany",
+      "model": "Quotation",
+      "foreignKey": "idSurvey"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

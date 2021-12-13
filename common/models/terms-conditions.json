@@ -1,0 +1,44 @@
+{
+  "name": "termsConditions",
+  "plural": "termConditions",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "document": {
+      "type": "string"
+    },
+    "required": {
+      "type": "boolean",
+      "default": false
+    },
+    "idQuotation": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "quotation": {
+      "type": "belongsTo",
+      "model": "Quotation",
+      "foreignKey": "idQuotation"
+    },
+    "answerTerms": {
+      "type": "hasMany",
+      "model": "answerTerms",
+      "foreignKey": "idTerm"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

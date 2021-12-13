@@ -1,0 +1,43 @@
+{
+  "name": "answerDocs",
+  "plural": "answerDocss",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "idAnswer": {
+      "type": "number",
+      "required": true
+    },
+    "idDoc": {
+      "type": "string",
+      "required": true
+    },
+    "nameDoc": {
+      "type": "string"
+    },
+    "document": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "answer": {
+      "type": "belongsTo",
+      "model": "Answer",
+      "foreignKey": "idAnswer"
+    },
+    "docsRequired": {
+      "type": "belongsTo",
+      "model": "docsRequired",
+      "foreignKey": "idDoc"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

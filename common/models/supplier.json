@@ -1,0 +1,46 @@
+{
+  "name": "Supplier",
+  "plural": "suppliers",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string",
+      "required": true
+    },
+    "img": {
+      "type": "string"
+    },
+    "idContact": {
+      "type": "string"
+    },
+    "businessArea": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "answers": {
+      "type": "hasMany",
+      "model": "Answer",
+      "foreignKey": "idSupplier"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

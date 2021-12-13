@@ -1,0 +1,110 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "MySQL"
+  },
+  "AccessToken": {
+    "dataSource": "MySQL",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "MySQL",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "MySQL",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "MySQL",
+    "public": false
+  },
+  "Contact": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "Supplier": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "Applicant": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "Quotation": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "Quotation_Supplier": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "productService": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "Survey": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "Section": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "Query": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "Options": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "docsRequired": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "termsConditions": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "answerSurvey": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "answerProdServ": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "Answer": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "answerTerms": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "answerDocs": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "bidAnswer": {
+    "dataSource": "MySQL",
+    "public": true
+  }
+}

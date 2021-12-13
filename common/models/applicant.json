@@ -1,0 +1,37 @@
+{
+  "name": "Applicant",
+  "plural": "applicants",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "last_name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "quotations": {
+      "type": "hasMany",
+      "model": "Quotation",
+      "foreignKey": "idApplicant"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
