@@ -7,6 +7,7 @@ var socket = require('socket.io')(http,{
         origins: ['localhost:4200']
     }
 });
+
 module.exports = {
     //Publishing a event..
     publish: function(name, data ){
@@ -45,6 +46,16 @@ module.exports = {
         return r;
     }
 }
+
+socket.on('connection', (socket) => {
+    console.log('a user connected');
+
+    socket.emit('conectado', { someProperty: 'otra propiedad', otherProperty: 'otr valor' }); // This will emit the event to all connected sockets
+
+    socket.on('disconnect', () => {
+        console.log('user disconnected');
+      });
+  });
 
 http.listen(4444, () => {
     console.log('Listening on port 4444');

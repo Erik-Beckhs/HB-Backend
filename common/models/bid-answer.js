@@ -7,6 +7,6 @@ module.exports = function(Bidanswer) {
         pubsub.publish('oferta', ctx.instance);
           //console.log('> after save triggered:', ctx.Model.modelName, ctx.instance);
           next();
-      });    
+    });    
 };
 
