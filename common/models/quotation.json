@@ -51,6 +51,13 @@
     },
     "idSurvey": {
       "type": "string"
+    },
+    "typeOrigin": {
+      "type": "number"
+    },
+    "auction": {
+      "type": "boolean",
+      "default": 0
     }
   },
   "validations": [],
@@ -84,6 +91,16 @@
       "type": "hasMany",
       "model": "productService",
       "foreignKey": "idQuotation"
+    },
+    "auctionRules": {
+      "type": "hasOne",
+      "model": "auctionRules",
+      "foreignKey": "idQuotation"
+    },
+    "ordenCompras": {
+      "type": "hasMany",
+      "model": "ordenCompra",
+      "foreignKey": "id_cotizacion"
     }
   },
   "acls": [],

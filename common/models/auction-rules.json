@@ -1,0 +1,57 @@
+{
+  "name": "auctionRules",
+  "plural": "auctionRuless",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "classification": {
+      "type": "number"
+    },
+    "showName": {
+      "type": "boolean"
+    },
+    "drawTotal": {
+      "type": "boolean"
+    },
+    "valueImproveTotal": {
+      "type": "number"
+    },
+    "typeImproveTotal": {
+      "type": "string"
+    },
+    "drawSingle": {
+      "type": "boolean"
+    },
+    "valueImproveSingle": {
+      "type": "number"
+    },
+    "typeImproveSingle": {
+      "type": "string"
+    },
+    "timeBeforeNewBid": {
+      "type": "number"
+    },
+    "idQuotation": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "quotation": {
+      "type": "belongsTo",
+      "model": "Quotation",
+      "foreignKey": "idQuotation"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -106,5 +106,37 @@
   "bidAnswer": {
     "dataSource": "MySQL",
     "public": true
+  },
+  "auctionRules": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "ordenCompra": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "paymentType": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "payment": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "shipment": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "dispatch": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "event": {
+    "dataSource": "MySQL",
+    "public": true
+  },
+  "answerSurveyAux": {
+    "dataSource": "MySQL",
+    "public": true
   }
 }

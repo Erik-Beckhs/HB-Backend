@@ -1,6 +1,6 @@
 {
-  "name": "Supplier",
-  "plural": "suppliers",
+  "name": "shipment",
+  "plural": "shipments",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -16,34 +16,36 @@
       "type": "string",
       "required": true
     },
-    "type": {
+    "origin": {
       "type": "string"
     },
-    "country": {
-      "type": "string",
-      "required": true
-    },
-    "img": {
+    "destination": {
       "type": "string"
     },
-    "idContact": {
+    "transitDays": {
+      "type": "number"
+    },
+    "modality": {
       "type": "string"
     },
-    "businessArea": {
-      "type": "string"
+    "state": {
+      "type": "number"
+    },
+    "creationDate": {
+      "type": "date"
     }
   },
   "validations": [],
   "relations": {
-    "answers": {
+    "dispatches": {
       "type": "hasMany",
-      "model": "Answer",
-      "foreignKey": "idSupplier"
+      "model": "dispatch",
+      "foreignKey": "idShipment"
     },
-    "ordenCompras": {
+    "events": {
       "type": "hasMany",
-      "model": "ordenCompra",
-      "foreignKey": "id_proveedor"
+      "model": "event",
+      "foreignKey": "idShipment"
     }
   },
   "acls": [],

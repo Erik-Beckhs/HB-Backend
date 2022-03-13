@@ -50,7 +50,7 @@ module.exports = {
 socket.on('connection', (socket) => {
     console.log('a user connected');
 
-    socket.emit('conectado', { someProperty: 'otra propiedad', otherProperty: 'otr valor' }); // This will emit the event to all connected sockets
+    socket.emit('conectado', { someProperty: 'otra propiedad', otherProperty: 'otro valor' }); // This will emit the event to all connected sockets
 
     socket.on('disconnect', () => {
         console.log('user disconnected');

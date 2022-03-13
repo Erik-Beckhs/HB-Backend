@@ -1,0 +1,50 @@
+{
+  "name": "payment",
+  "plural": "payments",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "percent": {
+      "type": "number"
+    },
+    "amount": {
+      "type": "number",
+      "required": true
+    },
+    "idOC": {
+      "type": "string",
+      "required": true
+    },
+    "idPaymentType": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "ordenCompra": {
+      "type": "belongsTo",
+      "model": "ordenCompra",
+      "foreignKey": "idOC"
+    },
+    "paymentType": {
+      "type": "belongsTo",
+      "model": "paymentType",
+      "foreignKey": "idPaymentType"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

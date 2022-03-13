@@ -49,6 +49,11 @@
       "type": "hasMany",
       "model": "answerSurvey",
       "foreignKey": "idQuery"
+    },
+    "answerSurveyAuxes": {
+      "type": "hasMany",
+      "model": "answerSurveyAux",
+      "foreignKey": "idQuery"
     }
   },
   "acls": [],

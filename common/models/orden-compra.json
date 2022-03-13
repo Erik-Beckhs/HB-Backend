@@ -1,0 +1,57 @@
+{
+  "name": "ordenCompra",
+  "plural": "ordenCompras",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "fecha_orden": {
+      "type": "date"
+    },
+    "importe_total": {
+      "type": "number"
+    },
+    "id_cotizacion": {
+      "type": "string"
+    },
+    "id_proveedor": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "quotation": {
+      "type": "belongsTo",
+      "model": "Quotation",
+      "foreignKey": "id_cotizacion"
+    },
+    "supplier": {
+      "type": "belongsTo",
+      "model": "Supplier",
+      "foreignKey": "id_proveedor"
+    },
+    "payments": {
+      "type": "hasMany",
+      "model": "payment",
+      "foreignKey": "idOC"
+    },
+    "dispatches": {
+      "type": "hasMany",
+      "model": "dispatch",
+      "foreignKey": "idOC"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

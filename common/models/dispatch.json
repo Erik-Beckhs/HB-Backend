@@ -1,6 +1,6 @@
 {
-  "name": "Applicant",
-  "plural": "applicants",
+  "name": "dispatch",
+  "plural": "dispatchs",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -13,26 +13,29 @@
       "required": true
     },
     "name": {
-      "type": "string",
-      "required": true
-    },
-    "last_name": {
-      "type": "string",
-      "required": true
-    },
-    "email": {
       "type": "string"
     },
-    "division": {
+    "state": {
+      "type": "number"
+    },
+    "idOC": {
+      "type": "string"
+    },
+    "idShipment": {
       "type": "string"
     }
   },
   "validations": [],
   "relations": {
-    "quotations": {
-      "type": "hasMany",
-      "model": "Quotation",
-      "foreignKey": "idApplicant"
+    "ordenCompra": {
+      "type": "belongsTo",
+      "model": "ordenCompra",
+      "foreignKey": "idOC"
+    },
+    "shipment": {
+      "type": "belongsTo",
+      "model": "shipment",
+      "foreignKey": "idShipment"
     }
   },
   "acls": [],

@@ -1,6 +1,6 @@
 {
-  "name": "Applicant",
-  "plural": "applicants",
+  "name": "paymentType",
+  "plural": "paymentTypes",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -8,31 +8,22 @@
   },
   "properties": {
     "id": {
-      "type": "string",
-      "id": true,
-      "required": true
+      "type": "number"
     },
     "name": {
       "type": "string",
       "required": true
     },
-    "last_name": {
-      "type": "string",
-      "required": true
-    },
-    "email": {
-      "type": "string"
-    },
-    "division": {
+    "description": {
       "type": "string"
     }
   },
   "validations": [],
   "relations": {
-    "quotations": {
+    "payments": {
       "type": "hasMany",
-      "model": "Quotation",
-      "foreignKey": "idApplicant"
+      "model": "payment",
+      "foreignKey": "idPaymentType"
     }
   },
   "acls": [],

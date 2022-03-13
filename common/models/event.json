@@ -1,6 +1,6 @@
 {
-  "name": "Applicant",
-  "plural": "applicants",
+  "name": "event",
+  "plural": "events",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -13,26 +13,30 @@
       "required": true
     },
     "name": {
-      "type": "string",
-      "required": true
-    },
-    "last_name": {
-      "type": "string",
-      "required": true
-    },
-    "email": {
       "type": "string"
     },
-    "division": {
+    "planDate": {
+      "type": "date"
+    },
+    "realDate": {
+      "type": "date"
+    },
+    "newDate": {
+      "type": "date"
+    },
+    "state": {
+      "type": "string"
+    },
+    "idShipment": {
       "type": "string"
     }
   },
   "validations": [],
   "relations": {
-    "quotations": {
-      "type": "hasMany",
-      "model": "Quotation",
-      "foreignKey": "idApplicant"
+    "shipment": {
+      "type": "belongsTo",
+      "model": "shipment",
+      "foreignKey": "idShipment"
     }
   },
   "acls": [],
